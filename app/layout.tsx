@@ -6,10 +6,12 @@ import { FavoritesProvider } from '@/lib/favorites-context';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: { default: 'أنا مسلم | القرآن والذكر والسكينة', template: '%s | أنا مسلم' },
+  title: {
+    default: 'أنا مسلم | القرآن والذكر والسكينة',
+    template: '%s | أنا مسلم',
+  },
   description:
     'اقرأ القرآن الكريم وتفسيره، وتابع أذكارك اليومية، وتصفح أدعية من الكتاب والسنة وأحاديث وقصص الأنبياء.',
-  icons: { icon: '/favicon.svg' },
 };
 
 export default function RootLayout({
