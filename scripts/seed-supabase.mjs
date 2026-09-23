@@ -1,0 +1,21 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {createClient} from '@supabase/supabase-js';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+if(!process.env.SUPABASE_URL||!process.env.SUPABASE_SERVICE_ROLE_KEY)throw Error('Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY locally; never put the secret in NEXT_PUBLIC variables.');
+const db=createClient(process.env.SUPABASE_URL,process.env.SUPABASE_SERVICE_ROLE_KEY,{auth:{persistSession:false,autoRefreshToken:false}});
+const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
+async function upload(table,rows,onConflict='id'){for(let i=0;i<rows.length;i+=100){const {error}=await db.from(table).upsert(rows.slice(i,i+100),{onConflict});if(error)throw Error(`${table}: ${error.message}`)}console.log(`${table}: ${rows.length}`)}
+const base=read('data/content.json'),meta=read('data/hadith-meta.json');
+await upload('surahs',read('data/surahs.json'));
+const ayahs=Array.from({length:114},(_,i)=>read(`data/quran/${i+1}.json`)).flat();
+await upload('ayahs',ayahs.map(({id,surah_id,ayah_number,text_arabic})=>({id,surah_id,ayah_number,text_arabic})));
+await upload('tafsir',ayahs.map(a=>({ayah_id:a.id,tafsir_text:a.tafsir_text,source:a.source})),'ayah_id');
+for(const table of ['athkar_categories','athkar','dua_categories','duas','hadith_collections'])await upload(table,base[table]);
+const idx=read('public/data/hadith/index.json');const chunks=new Map();
+const records=idx.map(h=>{if(!chunks.has(h.chunk))chunks.set(h.chunk,read(`public/data/hadith/explained-${h.chunk}.json`));const d=chunks.get(h.chunk)[h.id];return {id:d.id,title:d.title,text_arabic:d.hadith_text,sharh:d.explanation,grade:d.grade,reference:d.takhrij,source_url:d.link,source_version:meta.version,word_meanings:d.word_meanings,benefits:d.benefits,book_names:d.books,categories:d.categories,source_payload:d}});
+await upload('hadiths',records);
+await upload('prophets',read('data/prophets.json').map(p=>({id:p.id,slug:p.slug,name:p.name,summary:p.summary,full_story:read(`data/stories/${p.slug}.json`)})));
+await upload('content_versions',[{source:'HadeethEnc',version:meta.version,metadata:meta}],'source');
+console.log('Imported the embedded edition. No public write policies were added.');

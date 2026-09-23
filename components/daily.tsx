@@ -1,0 +1,8 @@
+'use client';
+import Link from 'next/link';
+import { BookOpen, ScrollText, ArrowLeft } from 'lucide-react';
+import { useEffect, useState } from 'react';
+const verses=[{text:'فَإِنَّ مَعَ الْعُسْرِ يُسْرًا',source:'الشرح · الآية ٥',surah:94},{text:'وَقُل رَّبِّ زِدْنِي عِلْمًا',source:'طه · الآية ١١٤',surah:20},{text:'فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ',source:'البقرة · الآية ١٥٢',surah:2}];
+const hadiths=[{text:'مَن كان يُؤْمِنُ باللَّهِ واليَومِ الآخِرِ فَلْيَقُلْ خَيْرًا أوْ لِيَصْمُتْ.',source:'صحيح البخاري · ٦٠١٨ (مقتطف)',id:'5437'},{text:'يَسِّرُوا وَلَا تُعَسِّرُوا، وَبَشِّرُوا وَلَا تُنَفِّرُوا.',source:'صحيح البخاري · ٦٩',id:'5866'},{text:'الطُّهُورُ شَطْرُ الإِيمَانِ.',source:'صحيح مسلم · ٢٢٣ (مقتطف)',id:'65004'}];
+export function Daily(){const [index,setIndex]=useState(0);useEffect(()=>{const d=new Date();setIndex(Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/86400000)%3)},[]);const v=verses[index],h=hadiths[index];return <div className="daily-grid"><article className="verse-card" data-aos="fade-up" suppressHydrationWarning><div className="daily-label"><BookOpen size={19}/>آية اليوم<span>تدبّر وارتقِ</span></div><p className="sacred">﴿ {v.text} ﴾</p><span className="source">سورة {v.source}</span><Link href={'/quran/'+v.surah+'/'} className="daily-link">اقرأ السورة والتفسير <ArrowLeft size={17}/></Link></article><article className="hadith-card" data-aos="fade-up" suppressHydrationWarning><div className="daily-label"><ScrollText size={19}/>حديث اليوم<span>من هدي النبي ﷺ</span></div><p className="sacred">«{h.text}»</p><span className="source">{h.source}</span><Link href={'/hadith/?id='+h.id} className="daily-link">اقرأ الحديث ومعناه <ArrowLeft size={17}/></Link></article></div>}
+

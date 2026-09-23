@@ -1,0 +1,7 @@
+import { Search, ArrowLeft, Sparkles } from 'lucide-react';
+import Link from 'next/link';
+export function PageHead({label,title,description}:{label:string,title:string,description:string}){return <section className="page-head"><div className="container"><div className="eyebrow"><Sparkles size={16}/>{label}</div><h1>{title}</h1><p>{description}</p><div className="breadcrumb"><Link href="/">الرئيسية</Link><span>/</span><span>{title}</span></div></div></section>}
+export function SectionTitle({label,title,href,link}:{label:string,title:string,href?:string,link?:string}){return <div className="section-heading"><div><span className="eyebrow">{label}</span><h2>{title}</h2></div>{href&&<Link className="text-link" href={href}>{link||'استكشف المزيد'}<ArrowLeft size={18}/></Link>}</div>}
+export function SearchInput({value,onChange,placeholder}:{value:string,onChange:(s:string)=>void,placeholder:string}){return <div className="search-field"><Search size={21}/><input type="search" aria-label={placeholder} placeholder={placeholder} value={value} onChange={e=>onChange(e.target.value)}/>{value&&<button onClick={()=>onChange('')} aria-label="مسح البحث">×</button>}</div>}
+export const arabic=(n:number)=>n.toLocaleString('ar-EG');
+export const normalize=(s:string)=>s.normalize('NFD').replace(/[\u064B-\u065F\u0670\u06D6-\u06ED]/g,'').replace(/[أإآٱ]/g,'ا').replace(/ى/g,'ي').replace(/[٠-٩]/g,d=>String('٠١٢٣٤٥٦٧٨٩'.indexOf(d)));

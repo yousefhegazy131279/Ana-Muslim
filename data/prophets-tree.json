@@ -1,0 +1,29 @@
+{
+    "prophets": [
+      { "id": 1, "slug": "adam", "name": "آدم", "title": "أبو البشر", "theme": "البداية والاستخلاف", "generation": 0, "parent": null, "miracle": "خُلق بيد الله ونُفخ فيه من روحه", "miracleIcon": "sparkles" },
+      { "id": 2, "slug": "idris", "name": "إدريس", "title": "الرفيع المكان", "theme": "العلم والرفعة", "generation": 1, "parent": "adam", "miracle": "رُفع مكانًا عليًّا", "miracleIcon": "star" },
+      { "id": 3, "slug": "nuh", "name": "نوح", "title": "شيخ المرسلين", "theme": "الدعوة والصبر", "generation": 1, "parent": "adam", "miracle": "السفينة التي أنجت المؤمنين", "miracleIcon": "ship" },
+      { "id": 4, "slug": "hud", "name": "هود", "title": "نذير عاد", "theme": "الاستقامة", "generation": 2, "parent": "nuh", "miracle": "إهلاك عاد بالريح العقيم", "miracleIcon": "wind" },
+      { "id": 5, "slug": "salih", "name": "صالح", "title": "نذير ثمود", "theme": "الآيات والعناد", "generation": 2, "parent": "nuh", "miracle": "الناقة التي خرجت من الصخر", "miracleIcon": "mountain" },
+      { "id": 6, "slug": "ibrahim", "name": "إبراهيم", "title": "خليل الرحمن", "theme": "التوحيد واليقين", "generation": 3, "parent": "hud", "miracle": "النار التي صارت بردًا وسلامًا", "miracleIcon": "flame" },
+      { "id": 7, "slug": "lut", "name": "لوط", "title": "نذير قومه", "theme": "الطهر والنجاة", "generation": 3, "parent": "hud", "miracle": "قلب القرى وإمطار حجارة", "miracleIcon": "cloud" },
+      { "id": 8, "slug": "ismail", "name": "إسماعيل", "title": "الذبيح الصابر", "theme": "التسليم والوفاء", "generation": 4, "parent": "ibrahim", "miracle": "زمزم التي فجّرها جبريل", "miracleIcon": "droplets" },
+      { "id": 9, "slug": "ishaq", "name": "إسحاق", "title": "بشارة الرحمن", "theme": "البشارة والبركة", "generation": 4, "parent": "ibrahim", "miracle": "وُلد على الكبر بشارة من الله", "miracleIcon": "sparkles" },
+      { "id": 10, "slug": "yaqub", "name": "يعقوب", "title": "إسرائيل", "theme": "الصبر الجميل", "generation": 5, "parent": "ishaq", "miracle": "رجوع بصره بعد فقدانه", "miracleIcon": "eye" },
+      { "id": 11, "slug": "yusuf", "name": "يوسف", "title": "الصدّيق", "theme": "الصبر والتمكين", "generation": 6, "parent": "yaqub", "miracle": "تأويل الرؤى", "miracleIcon": "moon" },
+      { "id": 12, "slug": "ayyub", "name": "أيوب", "title": "مثال الصبر", "theme": "الصبر والشفاء", "generation": 6, "parent": "ishaq", "miracle": "شفاؤه بعد بلاء طويل", "miracleIcon": "heart-pulse" },
+      { "id": 13, "slug": "shuayb", "name": "شعيب", "title": "خطيب الأنبياء", "theme": "العدل في الميزان", "generation": 6, "parent": "ibrahim", "miracle": "إهلاك أصحاب الأيكة", "miracleIcon": "scale" },
+      { "id": 14, "slug": "musa", "name": "موسى", "title": "كليم الله", "theme": "النجاة والتحرير", "generation": 7, "parent": "yaqub", "miracle": "البحر الذي انشق نصفين", "miracleIcon": "waves" },
+      { "id": 15, "slug": "harun", "name": "هارون", "title": "وزير أخيه", "theme": "المساندة والفصاحة", "generation": 7, "parent": "yaqub", "miracle": "فصاحة اللسان", "miracleIcon": "feather" },
+      { "id": 16, "slug": "dhul-kifl", "name": "ذو الكفل", "title": "من الصابرين", "theme": "الوفاء بالعهد", "generation": 7, "parent": "ayyub", "miracle": "من الصابرين الأبرار", "miracleIcon": "shield" },
+      { "id": 17, "slug": "dawud", "name": "داود", "title": "خليفة الله", "theme": "الحكمة والتسبيح", "generation": 8, "parent": "musa", "miracle": "إلانة الحديد وتسبيح الجبال", "miracleIcon": "shield" },
+      { "id": 18, "slug": "sulayman", "name": "سليمان", "title": "ملك الأنبياء", "theme": "الملك والعلم", "generation": 8, "parent": "dawud", "miracle": "تسخير الجن والريح والطير", "miracleIcon": "crown" },
+      { "id": 19, "slug": "ilyas", "name": "إلياس", "title": "نذير بني إسرائيل", "theme": "الثبات على التوحيد", "generation": 8, "parent": "harun", "miracle": "إحياء سنة التوحيد", "miracleIcon": "flame" },
+      { "id": 20, "slug": "al-yasa", "name": "اليسع", "title": "من المصطفين", "theme": "الإحسان", "generation": 8, "parent": "ilyas", "miracle": "من المفضلين على العالمين", "miracleIcon": "leaf" },
+      { "id": 21, "slug": "yunus", "name": "يونس", "title": "ذو النون", "theme": "التوبة والنجاة", "generation": 9, "parent": "al-yasa", "miracle": "خروجه من بطن الحوت", "miracleIcon": "fish" },
+      { "id": 22, "slug": "zakariyya", "name": "زكريا", "title": "داعيًا ربه", "theme": "الدعاء والاستجابة", "generation": 10, "parent": "yunus", "miracle": "الولد على الكبر", "miracleIcon": "sparkles" },
+      { "id": 23, "slug": "yahya", "name": "يحيى", "title": "سيد وحصور", "theme": "الطهر والصدق", "generation": 11, "parent": "zakariyya", "miracle": "أُوتي الحكم صبيًّا", "miracleIcon": "star" },
+      { "id": 24, "slug": "isa", "name": "عيسى", "title": "روح الله وكلمته", "theme": "الرحمة والمعجزة", "generation": 12, "parent": "yahya", "miracle": "إحياء الموتى بإذن الله", "miracleIcon": "heart-pulse" },
+      { "id": 25, "slug": "muhammad", "name": "محمد ﷺ", "title": "خاتم النبيين", "theme": "الرسالة الخاتمة", "generation": 13, "parent": "isa", "miracle": "القرآن الكريم — المعجزة الخالدة", "miracleIcon": "book-open", "isFinal": true }
+    ]
+  }

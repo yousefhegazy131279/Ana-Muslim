@@ -1,0 +1,33 @@
+{
+  "count": 3582,
+  "source": "https://hadeethenc.com/ar/",
+  "download": "https://hadeethenc.com/ar/browse/download/ar",
+  "version": "v1.7.0",
+  "version_info": "#---------------------------\n# Translated Prophetic Hadiths\n# Language: العربية\n# Source: https://hadeethenc.com/ar\n# Last update: 2025-11-12 00:00:55 (v1.7.0)\n# Check for updates: https://hadeethenc.com/en/check/ar/v1.7.0\n# PLEASE DON'T REMOVE THIS IMPORTANT INFORMATION!\n#---------------------------",
+  "imported_at": "2026-09-23",
+  "categories": [
+    "القرآن الكريم وعلومه",
+    "الحديث وعلومه",
+    "العقيدة",
+    "الفقه وأصوله",
+    "الفضائل والآداب",
+    "الدعوة والحسبة",
+    "السيرة والتاريخ"
+  ],
+  "grades": {
+    "صحيح": 3224,
+    "حسن": 275,
+    "تفصيل في الحكم": 83
+  },
+  "books": [
+    "البخاري",
+    "مسلم",
+    "أبو داود",
+    "الترمذي",
+    "النسائي",
+    "ابن ماجه",
+    "أحمد",
+    "مالك",
+    "مصادر أخرى"
+  ]
+}
