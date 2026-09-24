@@ -10,8 +10,14 @@ export const metadata: Metadata = {
     default: 'أنا مسلم | القرآن والذكر والسكينة',
     template: '%s | أنا مسلم',
   },
-  description:
-    'اقرأ القرآن الكريم وتفسيره، وتابع أذكارك اليومية، وتصفح أدعية من الكتاب والسنة وأحاديث وقصص الأنبياء.',
+  description: 'اقرأ القرآن الكريم وتفسيره، وتابع أذكارك اليومية، وتصفح أدعية من الكتاب والسنة وأحاديث وقصص الأنبياء.',
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: '/apple-icon.png',
+  },
 };
 
 export default function RootLayout({
