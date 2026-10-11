@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import {
@@ -9,6 +9,7 @@ import {
   Sun, Feather, Leaf, ChevronLeft, Eye, Scale, Fish, Shield, Wand2,
 } from 'lucide-react';
 import treeData from '@/data/prophets-tree.json';
+import imageManifest from '@/data/story-images.json';
 import { Reveal } from './reveal';
 import { arabic } from './ui';
 import { FavoriteButton } from './favorite-button';
@@ -56,9 +57,7 @@ type Particle = {
 // ============================================================
 export function ProphetsTree() {
   const [activeId, setActiveId] = useState<number | null>(null);
-  const [visibleIds, setVisibleIds] = useState<Set<number>>(new Set());
   const [particles, setParticles] = useState<Particle[]>([]);
-  const containerRef = useRef<HTMLDivElement>(null);
 
   const { prophets } = treeData;
 
@@ -94,34 +93,10 @@ export function ProphetsTree() {
   }, []);
 
   // ============================================================
-  // 4. ظهور تدريجي حسب الجيل
-  // ============================================================
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const sorted = [...prophets].sort(
-            (a, b) => a.generation - b.generation
-          );
-          sorted.forEach((p, i) => {
-            setTimeout(() => {
-              setVisibleIds((prev) => new Set(prev).add(p.id));
-            }, i * 120);
-          });
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (containerRef.current) observer.observe(containerRef.current);
-    return () => observer.disconnect();
-  }, [prophets]);
-
-  // ============================================================
   // العرض
   // ============================================================
   return (
-    <div className="prophets-tree-section" ref={containerRef}>
+    <div className="prophets-tree-section">
 
       {/* ============ خلفية متحركة متعددة الطبقات ============ */}
       <div className="tree-bg" aria-hidden="true">
@@ -199,8 +174,9 @@ export function ProphetsTree() {
         </span>
         <h1 className="tree-title">شجرة الأنبياء</h1>
         <p className="tree-subtitle">
-          من آدم عليه السلام... نزولًا إلى خاتم النبيين محمد ﷺ
+          خريطة لاستكشاف قصص الأنبياء من آدم إلى محمد ﷺ
         </p>
+        <p className="tree-map-note">التقسيم والخطوط لتنظيم التصفح؛ لا تمثل نسبًا مباشرًا بين الأنبياء أو أجيالًا وتواريخ ثابتة.</p>
       </Reveal>
 
       {/* ============ الشجرة ============ */}
@@ -219,7 +195,7 @@ export function ProphetsTree() {
               <div className="tree-generation-row">
                 {byGeneration[gen].map((prophet) => {
                   const Icon = ICON_MAP[prophet.miracleIcon] || Sparkles;
-                  const isVisible = visibleIds.has(prophet.id);
+                  const image = imageManifest[prophet.slug as keyof typeof imageManifest];
                   const isActive = activeId === prophet.id;
                   const isFinal = (prophet as any).isFinal;
 
@@ -227,8 +203,7 @@ export function ProphetsTree() {
                     <div
                       key={prophet.id}
                       className={
-                        'prophet-node' +
-                        (isVisible ? ' is-visible' : '') +
+                        'prophet-node is-visible' +
                         (isActive ? ' is-active' : '') +
                         (isFinal ? ' is-final' : '')
                       }
@@ -240,13 +215,20 @@ export function ProphetsTree() {
                       <span className="node-card">
                         <span className="node-visual">
                           <span className="node-visual-bg" />
+                          <Link href={`/stories/${prophet.slug}/`} prefetch={true} className="node-image-link" aria-label={`افتح قصة ${prophet.name}`}>
                           <Image
-                            src={`/images/prophets/${prophet.slug}.png`}
+                            src={image.src}
+                            unoptimized
+                            placeholder="blur"
+                            blurDataURL={image.blurDataURL}
+                            loading={genIndex===0?'eager':'lazy'}
+                            fetchPriority={genIndex===0?'high':'auto'}
                             alt={`معجزة ${prophet.name}: ${prophet.miracle}`}
                             fill
                             sizes="(max-width: 768px) 160px, 220px"
                             className="node-image"
                           />
+                          </Link>
                           {isFinal && (
                             <span className="node-crown" aria-hidden="true">
                               ✦
@@ -280,6 +262,7 @@ export function ProphetsTree() {
 
                       <Link
                         href={`/stories/${prophet.slug}/`}
+                        prefetch={true}
                         className="node-link"
                         aria-label={`اقرأ قصة ${prophet.name}`}
                       >

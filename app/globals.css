@@ -1,7 +1,7 @@
 /* ============================================================
    الخطوط
    ============================================================ */
-   @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;500;600;700;800;900&display=swap');
+   @import './fonts.css';
 
    /* ============================================================
       المتغيرات الأساسية
@@ -18003,4 +18003,15 @@
 
 .dark .story-of-us-signature-sub {
   color: #8fa996;
+}/* Content appears immediately; decorative animations never delay reading. */
+.prophet-node.is-visible .node-card{animation:none}.tree-map-note{max-width:680px;margin:16px auto 0;padding:12px 18px;border:1px solid var(--line);border-radius:10px;font-size:13px;line-height:1.9;color:var(--muted);background:var(--surface)}.site-header .logo-image{height:68px;width:68px}.site-header .logo{min-width:68px}.story-prose .reveal{transition:none}.contact-socials a{color:var(--green)}@media(max-width:800px){.site-header .logo-image{height:58px;width:58px}.site-header .logo{min-width:58px}}@media(max-width:560px){.tree-map-note{margin-inline:20px;font-size:12px}.site-header .logo-image{height:52px;width:52px}.site-header .logo{min-width:52px}}
+
+.node-image-link{position:absolute;inset:0;display:block;z-index:1}.node-image-link:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+
+.contact-social-wrap .social-link {
+  color: var(--green);
+  background: var(--surface);
 }
+.contact-social-wrap .social-link:hover { color: #fff; }
+.dark .contact-social-wrap .social-link { color: #c8e6c9; }
+.site-footer .footer-grid { padding-bottom: 30px; }

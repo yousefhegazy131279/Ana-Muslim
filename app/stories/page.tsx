@@ -13,7 +13,7 @@ export default function Page() {
       <PageHead
         label="لقد كان في قصصهم عبرة"
         title="قصص الأنبياء"
-        description="من آدم إلى محمد ﷺ؛ رحلة شجرة النبوّة كاملة."
+        description="قصص الأنبياء المذكورين في القرآن، مع نصوص الأدلة وتفسيرها."
       />
       <ProphetsTree />
     </>

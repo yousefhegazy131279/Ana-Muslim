@@ -35,7 +35,7 @@ const values = [
   {
     icon: ShieldCheck,
     title: 'الدقة',
-    text: 'نعرض المصادر ونميّز النص المنقول من الملخّص، ونتحقق من كل معلومة شرعية قبل نشرها.',
+    text: 'نعرض المصادر وأحكامها بوضوح، ونميّز النص المنقول من الصياغة التحريرية.',
   },
   {
     icon: Sparkles,
@@ -52,7 +52,7 @@ const values = [
 const stats = [
   { number: '114', label: 'سورة', icon: BookOpen },
   { number: '6,236', label: 'آية', icon: Feather },
-  { number: '3,582', label: 'حديث', icon: ShieldCheck },
+  { number: '3,582', label: 'مادة حديثية مشروحة', icon: ShieldCheck },
   { number: '92', label: 'فصلًا', icon: Layers },
 ];
 

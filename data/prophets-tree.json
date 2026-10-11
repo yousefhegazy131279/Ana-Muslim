@@ -21,8 +21,8 @@
       { "id": 19, "slug": "ilyas", "name": "إلياس", "title": "نذير بني إسرائيل", "theme": "الثبات على التوحيد", "generation": 8, "parent": "harun", "miracle": "إحياء سنة التوحيد", "miracleIcon": "flame" },
       { "id": 20, "slug": "al-yasa", "name": "اليسع", "title": "من المصطفين", "theme": "الإحسان", "generation": 8, "parent": "ilyas", "miracle": "من المفضلين على العالمين", "miracleIcon": "leaf" },
       { "id": 21, "slug": "yunus", "name": "يونس", "title": "ذو النون", "theme": "التوبة والنجاة", "generation": 9, "parent": "al-yasa", "miracle": "خروجه من بطن الحوت", "miracleIcon": "fish" },
-      { "id": 22, "slug": "zakariyya", "name": "زكريا", "title": "داعيًا ربه", "theme": "الدعاء والاستجابة", "generation": 10, "parent": "yunus", "miracle": "الولد على الكبر", "miracleIcon": "sparkles" },
-      { "id": 23, "slug": "yahya", "name": "يحيى", "title": "سيد وحصور", "theme": "الطهر والصدق", "generation": 11, "parent": "zakariyya", "miracle": "أُوتي الحكم صبيًّا", "miracleIcon": "star" },
+      { "id": 22, "slug": "zakariya", "name": "زكريا", "title": "داعيًا ربه", "theme": "الدعاء والاستجابة", "generation": 10, "parent": "yunus", "miracle": "الولد على الكبر", "miracleIcon": "sparkles" },
+      { "id": 23, "slug": "yahya", "name": "يحيى", "title": "سيد وحصور", "theme": "الطهر والصدق", "generation": 11, "parent": "zakariya", "miracle": "أُوتي الحكم صبيًّا", "miracleIcon": "star" },
       { "id": 24, "slug": "isa", "name": "عيسى", "title": "روح الله وكلمته", "theme": "الرحمة والمعجزة", "generation": 12, "parent": "yahya", "miracle": "إحياء الموتى بإذن الله", "miracleIcon": "heart-pulse" },
       { "id": 25, "slug": "muhammad", "name": "محمد ﷺ", "title": "خاتم النبيين", "theme": "الرسالة الخاتمة", "generation": 13, "parent": "isa", "miracle": "القرآن الكريم — المعجزة الخالدة", "miracleIcon": "book-open", "isFinal": true }
     ]

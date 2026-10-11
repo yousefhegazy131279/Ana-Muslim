@@ -36,10 +36,10 @@ export function Logo() {
   return (
     <Link href="/" className="logo" aria-label="أنا مسلم، الرئيسية">
       <Image
-        src="/logo.png"
+        src="/logo-small.webp"
         alt="أنا مسلم — دليل كل مسلم"
-        width={200}
-        height={64}
+        width={80}
+        height={80}
         priority
         className="logo-image"
       />

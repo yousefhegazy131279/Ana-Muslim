@@ -194,7 +194,7 @@ export function ContactSection() {
             <MapPin size={22} />
           </span>
           <span className="contact-channel-body">
-            <span className="contact-channel-label">بورتفوليو الفريق</span>
+            <span className="contact-channel-label">بورتفوليو يوسف حجازي</span>
             <span className="contact-channel-value" dir="ltr">
               hogz.vercel.app
             </span>
