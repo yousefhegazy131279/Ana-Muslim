@@ -18015,3 +18015,10 @@
 .contact-social-wrap .social-link:hover { color: #fff; }
 .dark .contact-social-wrap .social-link { color: #c8e6c9; }
 .site-footer .footer-grid { padding-bottom: 30px; }
+
+.reveal.reveal-visible {
+  opacity: 1;
+  transform: none;
+  transition: none;
+  will-change: auto;
+}
