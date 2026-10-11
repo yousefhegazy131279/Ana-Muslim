@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { FastLink as Link } from './fast-link';
 import Image from 'next/image';
 import {
   Sparkles, Ship, Flame, Waves, Moon, HeartPulse, BookOpen,
@@ -215,7 +214,7 @@ export function ProphetsTree() {
                       <span className="node-card">
                         <span className="node-visual">
                           <span className="node-visual-bg" />
-                          <Link href={`/stories/${prophet.slug}/`} prefetch={genIndex === 0 ? true : undefined} className="node-image-link" aria-label={`افتح قصة ${prophet.name}`}>
+                          <a href={`/stories/${prophet.slug}/`} className="node-image-link" aria-label={`افتح قصة ${prophet.name}`}>
                           <Image
                             src={image.src}
                             unoptimized
@@ -228,7 +227,7 @@ export function ProphetsTree() {
                             sizes="(max-width: 768px) 160px, 220px"
                             className="node-image"
                           />
-                          </Link>
+                          </a>
                           {isFinal && (
                             <span className="node-crown" aria-hidden="true">
                               ✦
@@ -260,14 +259,14 @@ export function ProphetsTree() {
                         </span>
                       </span>
 
-                      <Link
+                      <a
                         href={`/stories/${prophet.slug}/`}
                         className="node-link"
                         aria-label={`اقرأ قصة ${prophet.name}`}
                       >
                         القصة
                         <ChevronLeft size={13} />
-                      </Link>
+                      </a>
                     </div>
                   );
                 })}
