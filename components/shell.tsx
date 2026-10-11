@@ -1,7 +1,7 @@
 'use client';
 
 import { AuthButton } from './auth-button';
-import Link from 'next/link';
+import { FastLink as Link } from './fast-link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
