@@ -5,3 +5,14 @@ out/
 !.env.example
 .sites-runtime/
 *.tsbuildinfo
+mobile/dist/
+mobile/public/content/
+mobile/public/fonts/
+mobile/public/images/
+mobile/node_modules/
+mobile/android/.gradle/
+mobile/android/**/build/
+mobile/android/local.properties
+mobile/android/app/src/main/assets/public/
+mobile/ios/App/App/public/
+mobile/.signing/

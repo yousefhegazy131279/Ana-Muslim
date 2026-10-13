@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">أنا مسلم</string>
+    <string name="title_activity_main">أنا مسلم</string>
+    <string name="package_name">com.hgz.anamuslim</string>
+    <string name="custom_url_scheme">com.hgz.anamuslim</string>
+</resources>
