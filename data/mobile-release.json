@@ -1,9 +1,9 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "android": {
-    "url": "/downloads/ana-muslim-1.0.0.apk",
-    "bytes": 11388308,
-    "sha256": "48431cfa3c129885abcfa389fb5c2b4010f94b26e0c8ba8310a9cabfa13c3bc3"
+    "url": "/downloads/ana-muslim-1.1.0.apk",
+    "bytes": 11404692,
+    "sha256": "5f123bdc1e384b44653c12079bbf91bb6ff45a218ee4105951bac6da4dc15ee0"
   },
   "web": "/mobile/"
 }
