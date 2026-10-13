@@ -1,10 +1,16 @@
-import { createRoot } from 'react-dom/client';
-import { Capacitor } from '@capacitor/core';
-import { App as NativeApp } from '@capacitor/app';
-import { App } from './App';
-import { attachNotificationNavigation } from './notifications';
-import { restoreNativeStorage } from './storage';
-import './style.css';
-void restoreNativeStorage().then(()=>createRoot(document.getElementById('root')!).render(<App/>));
+import { createRoot } from "react-dom/client";
+import { Capacitor } from "@capacitor/core";
+import { App as NativeApp } from "@capacitor/app";
+import { App } from "./App";
+import { attachNotificationNavigation } from "./notifications";
+import { restoreNativeStorage } from "./storage";
+import "./style.css";
+void restoreNativeStorage()
+  .catch(() => undefined)
+  .then(() => createRoot(document.getElementById("root")!).render(<App />));
 void attachNotificationNavigation();
-if(Capacitor.isNativePlatform())void NativeApp.addListener('backButton',()=>{if(location.hash&&location.hash!=='#/')history.back();else void NativeApp.exitApp();});
+if (Capacitor.isNativePlatform())
+  void NativeApp.addListener("backButton", () => {
+    if (location.hash && location.hash !== "#/") history.back();
+    else void NativeApp.exitApp();
+  });
