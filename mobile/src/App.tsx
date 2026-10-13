@@ -15,6 +15,9 @@ import {
   Settings,
   Download,
   WifiOff,
+  Sparkles,
+  ArrowLeft,
+  CheckCircle2,
 } from "lucide-react";
 import { Capacitor } from "@capacitor/core";
 import {
@@ -651,12 +654,16 @@ function Preferences({
   font,
   onFont,
   status,
+  reduceMotion,
+  onMotion,
 }: {
   dark: boolean;
   onDark: () => void;
   font: number;
   onFont: (n: number) => void;
   status: string;
+  reduceMotion: boolean;
+  onMotion: () => void;
 }) {
   const [reminders, update] = useState(reminderSettings);
   const [message, setMessage] = useState("");
@@ -681,6 +688,12 @@ function Preferences({
             value={font}
             onChange={(e) => onFont(Number(e.target.value))}
           />
+        </label>
+        <label className="setting">
+          <span>
+            <Sparkles size={17} /> تقليل الحركة
+          </span>
+          <input type="checkbox" checked={reduceMotion} onChange={onMotion} />
         </label>
       </section>
       <section className="paper">
@@ -809,8 +822,46 @@ const sections = [
     icon: Bookmark,
   },
 ];
+function WelcomeArt() {
+  return (
+    <svg
+      className="welcome-art"
+      viewBox="0 0 220 250"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M30 232V110C30 66 64 26 110 10c46 16 80 56 80 100v122M46 230V114c0-36 25-70 64-87 39 17 64 51 64 87v116"
+        stroke="currentColor"
+        strokeWidth="1.3"
+      />
+      <path
+        d="M67 164c17-7 31-6 43 3 12-9 26-10 43-3v48c-17-7-31-6-43 3-12-9-26-10-43-3v-48Zm43 3v48M77 178c10-3 17-2 24 2m-24 10c10-3 17-2 24 2m18-12c7-4 14-5 24-2m-24 14c7-4 14-5 24-2"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="m110 77 5 13 14 5-14 5-5 13-5-13-14-5 14-5 5-13ZM55 46l2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6m116 79 2 6 6 2-6 2-2 6-2-6-6-2 6-2 2-6"
+        fill="currentColor"
+      />
+      <circle
+        cx="110"
+        cy="95"
+        r="37"
+        stroke="currentColor"
+        strokeDasharray="2 7"
+      />
+    </svg>
+  );
+}
 function Dashboard({ status }: { status: string }) {
   const { data: info } = useContent<Info>("info.json");
+  const { data: verses } = useContent<Verse[]>("quran/13.json");
+  const tranquility = verses?.find((v) => v.ayah_number === 28);
+  const saved = status.includes("جاهزة") || status.includes("داخل التطبيق");
+  const percent = status.match(/(\d+)٪/)?.[1];
   const last = read<{ route: string; title: string; scroll: number } | null>(
     "last",
     null,
@@ -818,17 +869,37 @@ function Dashboard({ status }: { status: string }) {
   return (
     <>
       <section className="welcome">
-        <p>مساحة لقلبك، ورفيق ليومك</p>
-        <h1>أنا مسلم</h1>
-        <p>قرآن تتدبّره، وذكرٌ يطمئن به قلبك، وهديٌ ينير دربك.</p>
-        <div className="offline-badge">
-          <WifiOff size={16} />
-          {status}
+        <WelcomeArt />
+        <span className="hero-orbit" aria-hidden="true" />
+        <Sparkles className="hero-spark" size={20} aria-hidden="true" />
+        <div className="welcome-content">
+          <span className="welcome-kicker">
+            <span /> مساحة لقلبك، ورفيق ليومك
+          </span>
+          <h1>أنا مسلم</h1>
+          <p>
+            لحظات من السكينة،
+            <br />
+            وهديٌ يرافقك أينما كنت.
+          </p>
+          <a className="button gold" href="#/quran">
+            <BookOpen size={19} /> ابدأ وردك اليوم <ArrowLeft size={17} />
+          </a>
+          <span className="hero-footnote">كل رحلة عظيمة تبدأ بآية</span>
         </div>
-        <a className="button gold" href="#/quran">
-          ابدأ وردك اليوم <BookOpen size={19} />
-        </a>
       </section>
+      <div
+        className={"offline-badge cache-state " + (saved ? "ready" : "saving")}
+        role="status"
+      >
+        {saved ? <CheckCircle2 size={17} /> : <WifiOff size={17} />}
+        <span>{status}</span>
+        {!saved && percent && (
+          <span className="cache-track" aria-hidden="true">
+            <span style={{ width: percent + "%" }} />
+          </span>
+        )}
+      </div>
       {last && (
         <button
           className="paper resume"
@@ -837,35 +908,78 @@ function Dashboard({ status }: { status: string }) {
             go(last.route);
           }}
         >
-          <BookOpen size={22} />
+          <span className="resume-icon">
+            <BookOpen size={22} />
+          </span>
           <span>
             تابع القراءة<small>{last.title}</small>
           </span>
-          <ArrowRight size={18} />
+          <ArrowLeft size={18} />
         </button>
       )}
+      <div className="dashboard-heading">
+        <div>
+          <span className="eyebrow">على مهل، وبقلب حاضر</span>
+          <h2>أبواب الخير</h2>
+        </div>
+        <a href="#/favorites">
+          <Bookmark size={15} /> مفضلتي
+        </a>
+      </div>
       <div className="section-grid">
         {sections.map((s) => (
           <a className="paper section-card" href={"#" + s.route} key={s.route}>
-            <s.icon size={26} />
+            <span className="section-icon">
+              <s.icon size={25} />
+            </span>
+            <ArrowLeft className="section-arrow" size={17} aria-hidden="true" />
             <h2>{s.title}</h2>
             <p>{s.subtitle}</p>
           </a>
         ))}
       </div>
+      {tranquility && (
+        <section className="paper tranquility-card">
+          <div className="tranquility-label">
+            <Sparkles size={17} />
+            <span>آية تطمئن القلب</span>
+            <span className="verse-ornament" aria-hidden="true">
+              ۞
+            </span>
+          </div>
+          <p className="sacred">{tranquility.text_arabic}</p>
+          <div className="tranquility-bottom">
+            <span>سورة الرعد · الآية ٢٨</span>
+            <a href="#/quran/13?ayah=28">
+              اقرأ التفسير <ArrowLeft size={15} />
+            </a>
+          </div>
+        </section>
+      )}
       {info && (
-        <p className="library-stats">
-          {arabic(info.surahs)} سورة · {arabic(info.hadiths)} مادة حديثية ·{" "}
-          {arabic(info.stories)} قصة
-          <br />
-          الإصدار {info.version}
-        </p>
+        <div className="library-stats">
+          <div>
+            <strong>{arabic(info.surahs)}</strong>
+            <span>سورة وتفسير</span>
+          </div>
+          <div>
+            <strong>{arabic(info.hadiths)}</strong>
+            <span>مادة حديثية</span>
+          </div>
+          <div>
+            <strong>{arabic(info.stories)}</strong>
+            <span>قصة نبي</span>
+          </div>
+        </div>
       )}
       <a href="#/settings" className="paper reminder-banner">
-        <Bell size={22} />
-        <span>
-          اجعل للقراءة موعدًا <small>خصص تذكيراتك اليومية</small>
+        <span className="reminder-icon">
+          <Bell size={22} />
         </span>
+        <span>
+          اجعل للقراءة موعدًا <small>قليلٌ دائم، وأثرٌ يبقى</small>
+        </span>
+        <ArrowLeft size={18} />
       </a>
       <p className="source">
         هذا التطبيق يضم محتوى الموقع الحالي ومصادره، ولا يدّعي جمع جميع الأحاديث
@@ -874,13 +988,28 @@ function Dashboard({ status }: { status: string }) {
     </>
   );
 }
+const navigation = [
+  { route: "/", title: "الرئيسية", icon: Home },
+  { route: "/quran", title: "القرآن", icon: BookOpen },
+  { route: "/hadith", title: "الأحاديث", icon: ScrollText },
+  { route: "/stories", title: "القصص", icon: Sprout },
+  { route: "/settings", title: "تذكيرات", icon: Bell },
+];
 export function App() {
   const route = useRoute();
   const path = route.split("?")[0];
   const params = new URLSearchParams(route.split("?")[1]);
   const [section, id] = path.split("/").filter(Boolean);
+  const activeTab = navigation.findIndex(
+    (n) =>
+      path === n.route || (n.route !== "/" && path.startsWith(n.route + "/")),
+  );
+  const { data: libraryInfo } = useContent<Info>("info.json");
   const [dark, setDark] = useState(() => read("dark", false));
   const [font, setFont] = useState(() => read("font", 30));
+  const [reduceMotion, setReduceMotion] = useState(() =>
+    read("reduce-motion", false),
+  );
   const [status, setStatus] = useState("جارٍ فحص المكتبة المحفوظة…");
   useEffect(() => {
     void setupOffline(setStatus);
@@ -888,7 +1017,8 @@ export function App() {
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
     document.documentElement.style.setProperty("--sacred-size", font + "px");
-  }, [dark, font]);
+    document.documentElement.classList.toggle("motion-reduced", reduceMotion);
+  }, [dark, font, reduceMotion]);
   useEffect(() => {
     if (!id || !["quran", "hadith", "stories"].includes(section)) return;
     let timer: ReturnType<typeof setTimeout>;
@@ -950,6 +1080,11 @@ export function App() {
             save("font", n);
           }}
           status={status}
+          reduceMotion={reduceMotion}
+          onMotion={() => {
+            setReduceMotion(!reduceMotion);
+            save("reduce-motion", !reduceMotion);
+          }}
         />
       );
       break;
@@ -986,25 +1121,38 @@ export function App() {
         </div>
       </header>
       <main className="app-main" id="main">
-        {body}
+        <div className="route-scene" key={path}>
+          {body}
+        </div>
         <footer className="app-footer">
           صُنع بمحبة ·{" "}
           <a href="https://hogz.vercel.app" target="_blank" rel="noreferrer">
             HGZ
           </a>
+          {libraryInfo && (
+            <span className="app-version">الإصدار {libraryInfo.version}</span>
+          )}
         </footer>
       </main>
       <nav className="bottom-nav" aria-label="التنقل الرئيسي">
-        {[
-          { route: "/", title: "الرئيسية", icon: Home },
-          { route: "/quran", title: "القرآن", icon: BookOpen },
-          { route: "/hadith", title: "الأحاديث", icon: ScrollText },
-          { route: "/stories", title: "القصص", icon: Sprout },
-          { route: "/settings", title: "تذكيرات", icon: Bell },
-        ].map((n) => (
+        <span
+          className="nav-indicator"
+          aria-hidden="true"
+          style={{
+            insetInlineStart: `calc(${Math.max(activeTab, 0) * 20}% + 8px)`,
+            opacity: activeTab < 0 ? 0 : 1,
+          }}
+        />
+        {navigation.map((n) => (
           <a
             key={n.route}
             href={"#" + n.route}
+            aria-current={
+              path === n.route ||
+              (n.route !== "/" && path.startsWith(n.route + "/"))
+                ? "page"
+                : undefined
+            }
             className={
               path === n.route ||
               (n.route !== "/" && path.startsWith(n.route + "/"))

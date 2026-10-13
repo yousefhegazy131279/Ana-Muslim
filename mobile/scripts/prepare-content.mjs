@@ -101,7 +101,9 @@ for (const file of files
 const athkar = await read("content/content-athkar.json"),
   duas = await read("content/content-duas.json");
 const info = {
-  version: "1.0.0",
+  version: JSON.parse(
+    await fs.readFile(path.join(mobile, "package.json"), "utf8"),
+  ).version,
   contentVersion: hash.digest("hex").slice(0, 16),
   surahs: surahs.length,
   ayahs,

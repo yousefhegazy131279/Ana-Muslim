@@ -6,6 +6,7 @@ import java.security.KeyStore;
 import java.security.PrivateKey;
 import java.security.cert.X509Certificate;
 import java.util.Collections;
+import java.util.Arrays;
 
 /** Signing material stays on the owner's computer and never enters the repository. */
 public class SignApk {
@@ -22,6 +23,12 @@ public class SignApk {
       .setV3SigningEnabled(true).setV4SigningEnabled(false).build().sign();
     ApkVerifier.Result result = new ApkVerifier.Builder(new File(args[2])).build().verify();
     if (!result.isVerified() || !result.isVerifiedUsingV2Scheme()) throw new IllegalStateException("APK signature verification failed: " + result.getErrors());
+    if (args.length > 3) {
+      ApkVerifier.Result previous = new ApkVerifier.Builder(new File(args[3])).build().verify();
+      if (!previous.isVerified() || !Arrays.equals(previous.getSignerCertificates().get(0).getEncoded(), result.getSignerCertificates().get(0).getEncoded()))
+        throw new IllegalStateException("Release signing key differs from the previous APK. Restore the original signing backup before publishing an update.");
+      System.out.println("Update certificate matches previous Android release");
+    }
     System.out.println("APK verified with v1/v2/v3 signatures");
   }
 }

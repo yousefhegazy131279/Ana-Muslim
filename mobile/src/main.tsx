@@ -5,6 +5,7 @@ import { App } from "./App";
 import { attachNotificationNavigation } from "./notifications";
 import { restoreNativeStorage } from "./storage";
 import "./style.css";
+import "./design.css";
 void restoreNativeStorage()
   .catch(() => undefined)
   .then(() => createRoot(document.getElementById("root")!).render(<App />));

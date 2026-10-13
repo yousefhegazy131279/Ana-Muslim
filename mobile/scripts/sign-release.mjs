@@ -62,7 +62,21 @@ run("javac", [
   signing,
   path.join(mobile, "scripts/SignApk.java"),
 ]);
-const dest = path.join(mobile, "../public/downloads/ana-muslim-1.0.0.apk");
+const version = JSON.parse(
+  await fs.readFile(path.join(mobile, "package.json"), "utf8"),
+).version;
+if (!/^\d+\.\d+\.\d+$/.test(version))
+  throw Error("Use a semantic release version");
+const apkName = `ana-muslim-${version}.apk`;
+const dest = path.join(mobile, "../public/downloads", apkName);
+const previousRelease = JSON.parse(
+  await fs
+    .readFile(path.join(mobile, "../data/mobile-release.json"), "utf8")
+    .catch(() => "null"),
+);
+const previousApk = previousRelease?.android?.url
+  ? path.join(mobile, "../public", previousRelease.android.url)
+  : null;
 await fs.mkdir(path.dirname(dest), { recursive: true });
 run("java", [
   "-cp",
@@ -71,6 +85,11 @@ run("java", [
   key,
   path.resolve(source),
   dest,
+  ...(previousApk &&
+  previousApk !== dest &&
+  (await fs.stat(previousApk).catch(() => null))
+    ? [previousApk]
+    : []),
 ]);
 const bytes = await fs.readFile(dest);
 const sha256 = createHash("sha256").update(bytes).digest("hex");
@@ -78,9 +97,9 @@ await fs.writeFile(
   path.join(mobile, "../data/mobile-release.json"),
   JSON.stringify(
     {
-      version: "1.0.0",
+      version,
       android: {
-        url: "/downloads/ana-muslim-1.0.0.apk",
+        url: "/downloads/" + apkName,
         bytes: bytes.length,
         sha256,
       },
