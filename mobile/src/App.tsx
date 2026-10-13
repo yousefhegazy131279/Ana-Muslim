@@ -471,7 +471,14 @@ function ProphetStory({ slug }: { slug: string }) {
             onClick={() =>
               document
                 .getElementById("chapter-" + c.id)
-                ?.scrollIntoView({ behavior: "smooth" })
+                ?.scrollIntoView({
+                  behavior:
+                    document.documentElement.classList.contains(
+                      "motion-reduced",
+                    ) || matchMedia("(prefers-reduced-motion: reduce)").matches
+                      ? "auto"
+                      : "smooth",
+                })
             }
           >
             {c.title}
