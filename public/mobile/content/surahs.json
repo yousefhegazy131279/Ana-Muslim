@@ -1,0 +1,800 @@
+[
+  {
+    "id": 1,
+    "name_arabic": "ٱلْفَاتِحَةِ",
+    "name_english": "Al-Faatiha",
+    "type": "مكية",
+    "total_ayahs": 7
+  },
+  {
+    "id": 2,
+    "name_arabic": "البَقَرَةِ",
+    "name_english": "Al-Baqara",
+    "type": "مدنية",
+    "total_ayahs": 286
+  },
+  {
+    "id": 3,
+    "name_arabic": "آلِ عِمۡرَانَ",
+    "name_english": "Aal-i-Imraan",
+    "type": "مدنية",
+    "total_ayahs": 200
+  },
+  {
+    "id": 4,
+    "name_arabic": "النِّسَاءِ",
+    "name_english": "An-Nisaa",
+    "type": "مدنية",
+    "total_ayahs": 176
+  },
+  {
+    "id": 5,
+    "name_arabic": "المَائـِدَةِ",
+    "name_english": "Al-Maaida",
+    "type": "مدنية",
+    "total_ayahs": 120
+  },
+  {
+    "id": 6,
+    "name_arabic": "الأَنۡعَامِ",
+    "name_english": "Al-An'aam",
+    "type": "مكية",
+    "total_ayahs": 165
+  },
+  {
+    "id": 7,
+    "name_arabic": "الأَعۡرَافِ",
+    "name_english": "Al-A'raaf",
+    "type": "مكية",
+    "total_ayahs": 206
+  },
+  {
+    "id": 8,
+    "name_arabic": "الأَنفَالِ",
+    "name_english": "Al-Anfaal",
+    "type": "مدنية",
+    "total_ayahs": 75
+  },
+  {
+    "id": 9,
+    "name_arabic": "التَّوۡبَةِ",
+    "name_english": "At-Tawba",
+    "type": "مدنية",
+    "total_ayahs": 129
+  },
+  {
+    "id": 10,
+    "name_arabic": "يُونُسَ",
+    "name_english": "Yunus",
+    "type": "مكية",
+    "total_ayahs": 109
+  },
+  {
+    "id": 11,
+    "name_arabic": "هُودٍ",
+    "name_english": "Hud",
+    "type": "مكية",
+    "total_ayahs": 123
+  },
+  {
+    "id": 12,
+    "name_arabic": "يُوسُفَ",
+    "name_english": "Yusuf",
+    "type": "مكية",
+    "total_ayahs": 111
+  },
+  {
+    "id": 13,
+    "name_arabic": "الرَّعۡدِ",
+    "name_english": "Ar-Ra'd",
+    "type": "مدنية",
+    "total_ayahs": 43
+  },
+  {
+    "id": 14,
+    "name_arabic": "إِبۡرَاهِيمَ",
+    "name_english": "Ibrahim",
+    "type": "مكية",
+    "total_ayahs": 52
+  },
+  {
+    "id": 15,
+    "name_arabic": "الحِجۡرِ",
+    "name_english": "Al-Hijr",
+    "type": "مكية",
+    "total_ayahs": 99
+  },
+  {
+    "id": 16,
+    "name_arabic": "النَّحۡلِ",
+    "name_english": "An-Nahl",
+    "type": "مكية",
+    "total_ayahs": 128
+  },
+  {
+    "id": 17,
+    "name_arabic": "الإِسۡرَاءِ",
+    "name_english": "Al-Israa",
+    "type": "مكية",
+    "total_ayahs": 111
+  },
+  {
+    "id": 18,
+    "name_arabic": "الكَهۡفِ",
+    "name_english": "Al-Kahf",
+    "type": "مكية",
+    "total_ayahs": 110
+  },
+  {
+    "id": 19,
+    "name_arabic": "مَرۡيَمَ",
+    "name_english": "Maryam",
+    "type": "مكية",
+    "total_ayahs": 98
+  },
+  {
+    "id": 20,
+    "name_arabic": "طه",
+    "name_english": "Taa-Haa",
+    "type": "مكية",
+    "total_ayahs": 135
+  },
+  {
+    "id": 21,
+    "name_arabic": "الأَنبِيَاءِ",
+    "name_english": "Al-Anbiyaa",
+    "type": "مكية",
+    "total_ayahs": 112
+  },
+  {
+    "id": 22,
+    "name_arabic": "الحَجِّ",
+    "name_english": "Al-Hajj",
+    "type": "مدنية",
+    "total_ayahs": 78
+  },
+  {
+    "id": 23,
+    "name_arabic": "المُؤۡمِنُونَ",
+    "name_english": "Al-Muminoon",
+    "type": "مكية",
+    "total_ayahs": 118
+  },
+  {
+    "id": 24,
+    "name_arabic": "النُّورِ",
+    "name_english": "An-Noor",
+    "type": "مدنية",
+    "total_ayahs": 64
+  },
+  {
+    "id": 25,
+    "name_arabic": "الفُرۡقَانِ",
+    "name_english": "Al-Furqaan",
+    "type": "مكية",
+    "total_ayahs": 77
+  },
+  {
+    "id": 26,
+    "name_arabic": "الشُّعَرَاءِ",
+    "name_english": "Ash-Shu'araa",
+    "type": "مكية",
+    "total_ayahs": 227
+  },
+  {
+    "id": 27,
+    "name_arabic": "النَّمۡلِ",
+    "name_english": "An-Naml",
+    "type": "مكية",
+    "total_ayahs": 93
+  },
+  {
+    "id": 28,
+    "name_arabic": "القَصَصِ",
+    "name_english": "Al-Qasas",
+    "type": "مكية",
+    "total_ayahs": 88
+  },
+  {
+    "id": 29,
+    "name_arabic": "العَنكَبُوتِ",
+    "name_english": "Al-Ankaboot",
+    "type": "مكية",
+    "total_ayahs": 69
+  },
+  {
+    "id": 30,
+    "name_arabic": "الرُّومِ",
+    "name_english": "Ar-Room",
+    "type": "مكية",
+    "total_ayahs": 60
+  },
+  {
+    "id": 31,
+    "name_arabic": "لُقۡمَانَ",
+    "name_english": "Luqman",
+    "type": "مكية",
+    "total_ayahs": 34
+  },
+  {
+    "id": 32,
+    "name_arabic": "السَّجۡدَةِ",
+    "name_english": "As-Sajda",
+    "type": "مكية",
+    "total_ayahs": 30
+  },
+  {
+    "id": 33,
+    "name_arabic": "الأَحۡزَابِ",
+    "name_english": "Al-Ahzaab",
+    "type": "مدنية",
+    "total_ayahs": 73
+  },
+  {
+    "id": 34,
+    "name_arabic": "سَبَإٍ",
+    "name_english": "Saba",
+    "type": "مكية",
+    "total_ayahs": 54
+  },
+  {
+    "id": 35,
+    "name_arabic": "فَاطِرٍ",
+    "name_english": "Faatir",
+    "type": "مكية",
+    "total_ayahs": 45
+  },
+  {
+    "id": 36,
+    "name_arabic": "يسٓ",
+    "name_english": "Yaseen",
+    "type": "مكية",
+    "total_ayahs": 83
+  },
+  {
+    "id": 37,
+    "name_arabic": "الصَّافَّاتِ",
+    "name_english": "As-Saaffaat",
+    "type": "مكية",
+    "total_ayahs": 182
+  },
+  {
+    "id": 38,
+    "name_arabic": "صٓ",
+    "name_english": "Saad",
+    "type": "مكية",
+    "total_ayahs": 88
+  },
+  {
+    "id": 39,
+    "name_arabic": "الزُّمَرِ",
+    "name_english": "Az-Zumar",
+    "type": "مكية",
+    "total_ayahs": 75
+  },
+  {
+    "id": 40,
+    "name_arabic": "غَافِرٍ",
+    "name_english": "Ghafir",
+    "type": "مكية",
+    "total_ayahs": 85
+  },
+  {
+    "id": 41,
+    "name_arabic": "فُصِّلَتۡ",
+    "name_english": "Fussilat",
+    "type": "مكية",
+    "total_ayahs": 54
+  },
+  {
+    "id": 42,
+    "name_arabic": "الشُّورَىٰ",
+    "name_english": "Ash-Shura",
+    "type": "مكية",
+    "total_ayahs": 53
+  },
+  {
+    "id": 43,
+    "name_arabic": "الزُّخۡرُفِ",
+    "name_english": "Az-Zukhruf",
+    "type": "مكية",
+    "total_ayahs": 89
+  },
+  {
+    "id": 44,
+    "name_arabic": "الدُّخَانِ",
+    "name_english": "Ad-Dukhaan",
+    "type": "مكية",
+    "total_ayahs": 59
+  },
+  {
+    "id": 45,
+    "name_arabic": "الجَاثِيَةِ",
+    "name_english": "Al-Jaathiya",
+    "type": "مكية",
+    "total_ayahs": 37
+  },
+  {
+    "id": 46,
+    "name_arabic": "الأَحۡقَافِ",
+    "name_english": "Al-Ahqaf",
+    "type": "مكية",
+    "total_ayahs": 35
+  },
+  {
+    "id": 47,
+    "name_arabic": "مُحَمَّدٍ",
+    "name_english": "Muhammad",
+    "type": "مدنية",
+    "total_ayahs": 38
+  },
+  {
+    "id": 48,
+    "name_arabic": "الفَتۡحِ",
+    "name_english": "Al-Fath",
+    "type": "مدنية",
+    "total_ayahs": 29
+  },
+  {
+    "id": 49,
+    "name_arabic": "الحُجُرَاتِ",
+    "name_english": "Al-Hujuraat",
+    "type": "مدنية",
+    "total_ayahs": 18
+  },
+  {
+    "id": 50,
+    "name_arabic": "قٓ",
+    "name_english": "Qaaf",
+    "type": "مكية",
+    "total_ayahs": 45
+  },
+  {
+    "id": 51,
+    "name_arabic": "الذَّارِيَاتِ",
+    "name_english": "Adh-Dhaariyat",
+    "type": "مكية",
+    "total_ayahs": 60
+  },
+  {
+    "id": 52,
+    "name_arabic": "الطُّورِ",
+    "name_english": "At-Tur",
+    "type": "مكية",
+    "total_ayahs": 49
+  },
+  {
+    "id": 53,
+    "name_arabic": "النَّجۡمِ",
+    "name_english": "An-Najm",
+    "type": "مكية",
+    "total_ayahs": 62
+  },
+  {
+    "id": 54,
+    "name_arabic": "القَمَرِ",
+    "name_english": "Al-Qamar",
+    "type": "مكية",
+    "total_ayahs": 55
+  },
+  {
+    "id": 55,
+    "name_arabic": "الرَّحۡمَٰن",
+    "name_english": "Ar-Rahmaan",
+    "type": "مدنية",
+    "total_ayahs": 78
+  },
+  {
+    "id": 56,
+    "name_arabic": "الوَاقِعَةِ",
+    "name_english": "Al-Waaqia",
+    "type": "مكية",
+    "total_ayahs": 96
+  },
+  {
+    "id": 57,
+    "name_arabic": "الحَدِيدِ",
+    "name_english": "Al-Hadid",
+    "type": "مدنية",
+    "total_ayahs": 29
+  },
+  {
+    "id": 58,
+    "name_arabic": "المُجَادلَةِ",
+    "name_english": "Al-Mujaadila",
+    "type": "مدنية",
+    "total_ayahs": 22
+  },
+  {
+    "id": 59,
+    "name_arabic": "الحَشۡرِ",
+    "name_english": "Al-Hashr",
+    "type": "مدنية",
+    "total_ayahs": 24
+  },
+  {
+    "id": 60,
+    "name_arabic": "المُمۡتَحنَةِ",
+    "name_english": "Al-Mumtahana",
+    "type": "مدنية",
+    "total_ayahs": 13
+  },
+  {
+    "id": 61,
+    "name_arabic": "الصَّفِّ",
+    "name_english": "As-Saff",
+    "type": "مدنية",
+    "total_ayahs": 14
+  },
+  {
+    "id": 62,
+    "name_arabic": "الجُمُعَةِ",
+    "name_english": "Al-Jumu'a",
+    "type": "مدنية",
+    "total_ayahs": 11
+  },
+  {
+    "id": 63,
+    "name_arabic": "المُنَافِقُونَ",
+    "name_english": "Al-Munaafiqoon",
+    "type": "مدنية",
+    "total_ayahs": 11
+  },
+  {
+    "id": 64,
+    "name_arabic": "التَّغَابُنِ",
+    "name_english": "At-Taghaabun",
+    "type": "مدنية",
+    "total_ayahs": 18
+  },
+  {
+    "id": 65,
+    "name_arabic": "الطَّلَاقِ",
+    "name_english": "At-Talaaq",
+    "type": "مدنية",
+    "total_ayahs": 12
+  },
+  {
+    "id": 66,
+    "name_arabic": "التَّحۡرِيمِ",
+    "name_english": "At-Tahrim",
+    "type": "مدنية",
+    "total_ayahs": 12
+  },
+  {
+    "id": 67,
+    "name_arabic": "المُلۡكِ",
+    "name_english": "Al-Mulk",
+    "type": "مكية",
+    "total_ayahs": 30
+  },
+  {
+    "id": 68,
+    "name_arabic": "القَلَمِ",
+    "name_english": "Al-Qalam",
+    "type": "مكية",
+    "total_ayahs": 52
+  },
+  {
+    "id": 69,
+    "name_arabic": "الحَاقَّةِ",
+    "name_english": "Al-Haaqqa",
+    "type": "مكية",
+    "total_ayahs": 52
+  },
+  {
+    "id": 70,
+    "name_arabic": "المَعَارِجِ",
+    "name_english": "Al-Ma'aarij",
+    "type": "مكية",
+    "total_ayahs": 44
+  },
+  {
+    "id": 71,
+    "name_arabic": "نُوحٍ",
+    "name_english": "Nooh",
+    "type": "مكية",
+    "total_ayahs": 28
+  },
+  {
+    "id": 72,
+    "name_arabic": "الجِنِّ",
+    "name_english": "Al-Jinn",
+    "type": "مكية",
+    "total_ayahs": 28
+  },
+  {
+    "id": 73,
+    "name_arabic": "المُزَّمِّلِ",
+    "name_english": "Al-Muzzammil",
+    "type": "مكية",
+    "total_ayahs": 20
+  },
+  {
+    "id": 74,
+    "name_arabic": "المُدَّثِّرِ",
+    "name_english": "Al-Muddaththir",
+    "type": "مكية",
+    "total_ayahs": 56
+  },
+  {
+    "id": 75,
+    "name_arabic": "القِيَامَةِ",
+    "name_english": "Al-Qiyaama",
+    "type": "مكية",
+    "total_ayahs": 40
+  },
+  {
+    "id": 76,
+    "name_arabic": "الإِنسَانِ",
+    "name_english": "Al-Insaan",
+    "type": "مدنية",
+    "total_ayahs": 31
+  },
+  {
+    "id": 77,
+    "name_arabic": "المُرۡسَلَاتِ",
+    "name_english": "Al-Mursalaat",
+    "type": "مكية",
+    "total_ayahs": 50
+  },
+  {
+    "id": 78,
+    "name_arabic": "النَّبَإِ",
+    "name_english": "An-Naba",
+    "type": "مكية",
+    "total_ayahs": 40
+  },
+  {
+    "id": 79,
+    "name_arabic": "النَّازِعَاتِ",
+    "name_english": "An-Naazi'aat",
+    "type": "مكية",
+    "total_ayahs": 46
+  },
+  {
+    "id": 80,
+    "name_arabic": "عَبَسَ",
+    "name_english": "Abasa",
+    "type": "مكية",
+    "total_ayahs": 42
+  },
+  {
+    "id": 81,
+    "name_arabic": "التَّكۡوِيرِ",
+    "name_english": "At-Takwir",
+    "type": "مكية",
+    "total_ayahs": 29
+  },
+  {
+    "id": 82,
+    "name_arabic": "الانفِطَارِ",
+    "name_english": "Al-Infitaar",
+    "type": "مكية",
+    "total_ayahs": 19
+  },
+  {
+    "id": 83,
+    "name_arabic": "المُطَفِّفِينَ",
+    "name_english": "Al-Mutaffifin",
+    "type": "مكية",
+    "total_ayahs": 36
+  },
+  {
+    "id": 84,
+    "name_arabic": "الانشِقَاقِ",
+    "name_english": "Al-Inshiqaaq",
+    "type": "مكية",
+    "total_ayahs": 25
+  },
+  {
+    "id": 85,
+    "name_arabic": "البُرُوجِ",
+    "name_english": "Al-Burooj",
+    "type": "مكية",
+    "total_ayahs": 22
+  },
+  {
+    "id": 86,
+    "name_arabic": "الطَّارِقِ",
+    "name_english": "At-Taariq",
+    "type": "مكية",
+    "total_ayahs": 17
+  },
+  {
+    "id": 87,
+    "name_arabic": "الأَعۡلَىٰ",
+    "name_english": "Al-A'laa",
+    "type": "مكية",
+    "total_ayahs": 19
+  },
+  {
+    "id": 88,
+    "name_arabic": "الغَاشِيَةِ",
+    "name_english": "Al-Ghaashiya",
+    "type": "مكية",
+    "total_ayahs": 26
+  },
+  {
+    "id": 89,
+    "name_arabic": "الفَجۡرِ",
+    "name_english": "Al-Fajr",
+    "type": "مكية",
+    "total_ayahs": 30
+  },
+  {
+    "id": 90,
+    "name_arabic": "البَلَدِ",
+    "name_english": "Al-Balad",
+    "type": "مكية",
+    "total_ayahs": 20
+  },
+  {
+    "id": 91,
+    "name_arabic": "الشَّمۡسِ",
+    "name_english": "Ash-Shams",
+    "type": "مكية",
+    "total_ayahs": 15
+  },
+  {
+    "id": 92,
+    "name_arabic": "اللَّيۡلِ",
+    "name_english": "Al-Lail",
+    "type": "مكية",
+    "total_ayahs": 21
+  },
+  {
+    "id": 93,
+    "name_arabic": "الضُّحَىٰ",
+    "name_english": "Ad-Dhuhaa",
+    "type": "مكية",
+    "total_ayahs": 11
+  },
+  {
+    "id": 94,
+    "name_arabic": "الشَّرۡحِ",
+    "name_english": "Ash-Sharh",
+    "type": "مكية",
+    "total_ayahs": 8
+  },
+  {
+    "id": 95,
+    "name_arabic": "التِّينِ",
+    "name_english": "At-Tin",
+    "type": "مكية",
+    "total_ayahs": 8
+  },
+  {
+    "id": 96,
+    "name_arabic": "العَلَقِ",
+    "name_english": "Al-Alaq",
+    "type": "مكية",
+    "total_ayahs": 19
+  },
+  {
+    "id": 97,
+    "name_arabic": "القَدۡرِ",
+    "name_english": "Al-Qadr",
+    "type": "مكية",
+    "total_ayahs": 5
+  },
+  {
+    "id": 98,
+    "name_arabic": "البَيِّنَةِ",
+    "name_english": "Al-Bayyina",
+    "type": "مدنية",
+    "total_ayahs": 8
+  },
+  {
+    "id": 99,
+    "name_arabic": "الزَّلۡزَلَةِ",
+    "name_english": "Az-Zalzala",
+    "type": "مدنية",
+    "total_ayahs": 8
+  },
+  {
+    "id": 100,
+    "name_arabic": "العَادِيَاتِ",
+    "name_english": "Al-Aadiyaat",
+    "type": "مكية",
+    "total_ayahs": 11
+  },
+  {
+    "id": 101,
+    "name_arabic": "القَارِعَةِ",
+    "name_english": "Al-Qaari'a",
+    "type": "مكية",
+    "total_ayahs": 11
+  },
+  {
+    "id": 102,
+    "name_arabic": "التَّكَاثُرِ",
+    "name_english": "At-Takaathur",
+    "type": "مكية",
+    "total_ayahs": 8
+  },
+  {
+    "id": 103,
+    "name_arabic": "العَصۡرِ",
+    "name_english": "Al-Asr",
+    "type": "مكية",
+    "total_ayahs": 3
+  },
+  {
+    "id": 104,
+    "name_arabic": "الهُمَزَةِ",
+    "name_english": "Al-Humaza",
+    "type": "مكية",
+    "total_ayahs": 9
+  },
+  {
+    "id": 105,
+    "name_arabic": "الفِيلِ",
+    "name_english": "Al-Fil",
+    "type": "مكية",
+    "total_ayahs": 5
+  },
+  {
+    "id": 106,
+    "name_arabic": "قُرَيۡشٍ",
+    "name_english": "Quraish",
+    "type": "مكية",
+    "total_ayahs": 4
+  },
+  {
+    "id": 107,
+    "name_arabic": "المَاعُونِ",
+    "name_english": "Al-Maa'un",
+    "type": "مكية",
+    "total_ayahs": 7
+  },
+  {
+    "id": 108,
+    "name_arabic": "الكَوۡثَرِ",
+    "name_english": "Al-Kawthar",
+    "type": "مكية",
+    "total_ayahs": 3
+  },
+  {
+    "id": 109,
+    "name_arabic": "الكَافِرُونَ",
+    "name_english": "Al-Kaafiroon",
+    "type": "مكية",
+    "total_ayahs": 6
+  },
+  {
+    "id": 110,
+    "name_arabic": "النَّصۡرِ",
+    "name_english": "An-Nasr",
+    "type": "مدنية",
+    "total_ayahs": 3
+  },
+  {
+    "id": 111,
+    "name_arabic": "المَسَدِ",
+    "name_english": "Al-Masad",
+    "type": "مكية",
+    "total_ayahs": 5
+  },
+  {
+    "id": 112,
+    "name_arabic": "الإِخۡلَاصِ",
+    "name_english": "Al-Ikhlaas",
+    "type": "مكية",
+    "total_ayahs": 4
+  },
+  {
+    "id": 113,
+    "name_arabic": "الفَلَقِ",
+    "name_english": "Al-Falaq",
+    "type": "مكية",
+    "total_ayahs": 5
+  },
+  {
+    "id": 114,
+    "name_arabic": "النَّاسِ",
+    "name_english": "An-Naas",
+    "type": "مكية",
+    "total_ayahs": 6
+  }
+]

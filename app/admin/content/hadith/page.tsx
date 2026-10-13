@@ -20,7 +20,6 @@ export const metadata = { title: 'إدارة الأحاديث' };
 // ============================================================
 async function getHadithData() {
     const dataDir = path.join(process.cwd(), 'data');
-    const publicDir = path.join(process.cwd(), 'public/data/hadith');
   
     // ===== 1. meta =====
     let meta: any = { count: 0, version: '-' };
@@ -34,19 +33,20 @@ async function getHadithData() {
     let index: any[] = [];
   
     // جرّب المسارات المحتملة بالترتيب
-    const candidates = [
-      path.join(publicDir, 'index.json'),        // ← الأرجح: الفهرس الكامل
-      path.join(dataDir, 'hadith/index.json'),   // ← بديل
-      path.join(dataDir, 'hadith-initial.json'), // ← احتياطي (12 فقط)
+    // Keep filesystem reads statically scoped so mobile assets and signing
+    // material cannot be pulled into the server deployment trace.
+    const readers = [
+      () => fs.readFile(path.join(process.cwd(), 'public/data/hadith', 'index.json'), 'utf8'),
+      () => fs.readFile(path.join(process.cwd(), 'data/hadith', 'index.json'), 'utf8'),
+      () => fs.readFile(path.join(process.cwd(), 'data', 'hadith-initial.json'), 'utf8'),
     ];
   
-    for (const file of candidates) {
+    for (const readIndex of readers) {
       try {
-        const content = await fs.readFile(file, 'utf8');
+        const content = await readIndex();
         const parsed = JSON.parse(content);
         if (Array.isArray(parsed) && parsed.length > 0) {
           index = parsed;
-          console.log(`✅ Loaded ${parsed.length} hadiths from: ${file}`);
           break;
         }
       } catch {

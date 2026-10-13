@@ -1,0 +1,9 @@
+{
+  "version": "1.0.0",
+  "android": {
+    "url": "/downloads/ana-muslim-1.0.0.apk",
+    "bytes": 11388308,
+    "sha256": "48431cfa3c129885abcfa389fb5c2b4010f94b26e0c8ba8310a9cabfa13c3bc3"
+  },
+  "web": "/mobile/"
+}

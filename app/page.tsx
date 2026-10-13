@@ -5,6 +5,7 @@ import { SectionTitle } from '@/components/ui';
 import { Daily } from '@/components/daily';
 import { Counter } from '@/components/counter';
 import { Reveal } from '@/components/reveal';
+import { DownloadApp } from '@/components/download-app';
 
 const sections = [
   { icon: BookOpen, title: 'القرآن الكريم', desc: 'تلاوة تُنير قلبك، ومعانٍ تتدبّرها.', meta: '١١٤ سورة بين يديك', href: '/quran/' },
@@ -265,6 +266,8 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      <DownloadApp />
 
       {/* ============ قسم CTA ============ */}
       <section className="cta-section">
