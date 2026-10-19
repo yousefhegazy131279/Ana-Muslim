@@ -5,3 +5,16 @@
 @media(max-width:640px){.daily-tools-grid{grid-template-columns:1fr}.tool-form{grid-template-columns:1fr}.prayer-summary{flex-direction:column;align-items:stretch}.next-prayer{min-width:0}.prayer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tool-panel{padding:22px 18px;border-radius:20px}.prayer-card{padding:20px 10px}.prayer-card.is-next{padding:19px 9px}.tool-actions .button{flex:1 1 auto;justify-content:center}.qibla-city{flex-basis:100%}.tool-panel-heading h2{font-size:19px}.tasbih-tool{gap:18px}}
 @media(max-width:380px){.prayer-card time{font-size:20px}.tool-panel{padding:18px 14px}.tasbih-history time{font-size:9px}.tasbih-history strong{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.ring-progress,.tasbih-add{transition:none}.tool-spinner{animation:none}.compass-dial{will-change:auto}}
+
+/* Keep desktop navigation in one line and place home cards in the requested order. */
+@media(min-width:901px){
+  .nav-wrap{gap:clamp(8px,1.1vw,14px);flex-wrap:nowrap;padding-block:10px}
+  .nav-links{gap:clamp(2px,.35vw,8px);order:0;width:auto;justify-content:center;margin-inline:0;min-width:0;flex:1;overflow:hidden}
+  .nav-link{font-size:clamp(10px,.92vw,13px);padding-inline:clamp(4px,.6vw,9px)}
+  .nav-cta{white-space:nowrap}
+  .feature-grid,.daily-tools-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+
+@media(max-width:900px) and (min-width:641px){
+  .daily-tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
