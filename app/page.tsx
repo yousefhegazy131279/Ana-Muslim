@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { BookOpen, Sun, HandHeart, ScrollText, ArrowLeft, Sprout, Sparkles, Check, ArrowUpLeft, Clock } from 'lucide-react';
+import { BookOpen, Sun, HandHeart, ScrollText, ArrowLeft, Sprout, Sparkles, Check, ArrowUpLeft, Clock, Compass, CircleDot } from 'lucide-react';
 import { SectionTitle } from '@/components/ui';
 import { Daily } from '@/components/daily';
 import { Counter } from '@/components/counter';
@@ -99,6 +99,19 @@ export default function Home() {
             <span>اقرأ. تدبّر. اذكر.</span>
             <span>رحلتك مع الإيمان، كل يوم <Sparkles size={15} /></span>
           </div>
+        </div>
+      </section>
+
+      <section className="section container daily-tools-section" aria-labelledby="daily-tools-heading">
+        <SectionTitle label="عبادات ترافق يومك" title="أدوات المسلم اليومية" />
+        <div className="daily-tools-grid">
+          {[
+            { href: '/prayer-times/', title: 'مواقيت الصلاة', desc: 'رتّب يومك حول الصلاة مع عدّاد الصلاة القادمة.', meta: 'اختر مدينتك وطريقة الحساب', icon: Clock },
+            { href: '/qibla/', title: 'اتجاه القبلة', desc: 'اعرف اتجاه القبلة من موقعك أو من أي مدينة.', meta: 'حساب محلي وبوصلة اختيارية', icon: Compass },
+            { href: '/tasbih/', title: 'التسبيح والذكر', desc: 'نظّم وردك وسجّل تسبيحاتك اليومية.', meta: 'وردك محفوظ على جهازك', icon: CircleDot },
+          ].map(({ href, title, desc, meta, icon: Icon }, index) => <Reveal key={href} animation="fade-up" delay={index * 90}>
+            <Link href={href} className="feature-card"><span className="feature-glow" aria-hidden="true" /><div className="feature-top"><span className="feature-icon"><Icon size={28} strokeWidth={1.5} /></span><span className="feature-arrow"><ArrowUpLeft size={20} /></span></div><h3>{title}</h3><p>{desc}</p><div className="feature-bottom"><span className="feature-meta">{meta}</span><span className="feature-cta"><ArrowLeft size={17} /></span></div><span className="feature-number" aria-hidden="true">{String(index + 5).padStart(2, '0')}</span></Link>
+          </Reveal>)}
         </div>
       </section>
 

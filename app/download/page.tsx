@@ -1,10 +1,10 @@
 import { PageHead } from "@/components/ui";
 import { DownloadApp } from "@/components/download-app";
 import release from "@/data/mobile-release.json";
-export const metadata = {
-  title: "تنزيل تطبيق أنا مسلم",
-  description: "القراءة دون إنترنت على أندرويد وiPhone والأجهزة الأخرى.",
-};
+import { pageMetadata } from '@/lib/seo';
+import { PageData } from '@/components/structured-data';
+const description = "القراءة دون إنترنت على أندرويد وiPhone والأجهزة الأخرى.";
+export const metadata = pageMetadata("تنزيل تطبيق أنا مسلم", description, '/download');
 export default function DownloadPage() {
   const android = release.android as {
     url: string;
@@ -13,6 +13,7 @@ export default function DownloadPage() {
   } | null;
   return (
     <>
+      <PageData title="تنزيل تطبيق أنا مسلم" path="/download" description={description} />
       <PageHead
         label="أنا مسلم على جهازك"
         title="التطبيق والقراءة دون إنترنت"

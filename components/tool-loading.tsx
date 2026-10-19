@@ -1,0 +1,1 @@
+export function ToolLoading() { return <div className="container content-section" role="status" aria-live="polite"><div className="tool-panel tool-loading"><span className="tool-spinner" aria-hidden="true" /><p>جارٍ تجهيز الأداة…</p></div></div>; }

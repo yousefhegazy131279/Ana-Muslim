@@ -171,7 +171,7 @@ export function ProphetsTree() {
           <Leaf size={14} />
           سلسلة النبوّة · ٢٥ نبيًّا
         </span>
-        <h1 className="tree-title">شجرة الأنبياء</h1>
+        <h2 className="tree-title">شجرة الأنبياء</h2>
         <p className="tree-subtitle">
           خريطة لاستكشاف قصص الأنبياء من آدم إلى محمد ﷺ
         </p>

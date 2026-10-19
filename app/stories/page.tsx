@@ -1,15 +1,15 @@
 import { PageHead } from '@/components/ui';
 import { ProphetsTree } from '@/components/prophets-tree';
+import { pageMetadata } from '@/lib/seo';
+import { PageData } from '@/components/structured-data';
 
-export const metadata = {
-  title: 'قصص الأنبياء بالأدلة والتفسير',
-  description:
-    'شجرة الأنبياء الخمسة والعشرين المذكورين في القرآن، من آدم إلى محمد ﷺ، مع الآيات والتفسير والأحاديث وشروحها.',
-};
+const description = 'قصص الأنبياء الخمسة والعشرين المذكورين في القرآن، من آدم إلى محمد ﷺ، مع الآيات والتفسير والأحاديث الصحيحة.';
+export const metadata = pageMetadata('قصص الأنبياء بالأدلة والتفسير', description, '/stories', '/opengraph-image', ['قصص الأنبياء كاملة', 'قصة آدم']);
 
 export default function Page() {
   return (
     <>
+      <PageData title="قصص الأنبياء" path="/stories" description={description} type="CollectionPage" />
       <PageHead
         label="لقد كان في قصصهم عبرة"
         title="قصص الأنبياء"

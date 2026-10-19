@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   User,
   Mail,
@@ -201,11 +202,13 @@ export default async function AccountPage() {
 
           <div className="account-hero-avatar">
             {avatarUrl ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
+              <Image
                 src={avatarUrl}
                 alt={firstName}
                 className="account-hero-avatar-img"
+                width={96}
+                height={96}
+                unoptimized
               />
             ) : (
               <span className="account-hero-initial">{initial}</span>

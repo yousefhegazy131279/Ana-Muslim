@@ -13,6 +13,8 @@ import { ReadingProgress } from '@/components/reading-progress';
 import type { Ayah } from '@/components/reader';
 import type { HadithRecord } from '@/components/hadith';
 import meta from '@/data/hadith-meta.json';
+import { pageMetadata } from '@/lib/seo';
+import { BreadcrumbData, NamedStructuredData } from '@/components/structured-data';
 
 type Story = {
   id: number;
@@ -51,10 +53,8 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const p = prophets.find((p) => p.slug === slug);
-  return {
-    title: p ? `قصة ${p.name} بالأدلة والتفسير` : 'القصة غير موجودة',
-    description: p?.summary,
-  };
+  if (!p) return { title: 'القصة غير موجودة', robots: { index: false, follow: false } };
+  return pageMetadata(`قصة ${p.name} بالأدلة والتفسير`, p.summary, `/stories/${slug}`, `/stories/${slug}/opengraph-image`, ['قصة ' + p.name]);
 }
 
 export default async function Page({
@@ -81,6 +81,8 @@ export default async function Page({
 
   return (
     <>
+      <BreadcrumbData items={[{ name: 'قصص الأنبياء', path: '/stories' }, { name: p.name, path: `/stories/${slug}` }]} />
+      <NamedStructuredData data={{ '@type': 'Article', headline: p.name, description: p.summary, author: { '@type': 'Organization', name: 'أنا مسلم' }, inLanguage: 'ar', isAccessibleForFree: true }} />
       <ReadingProgress />
 
       <PageHead
@@ -465,20 +467,6 @@ export default async function Page({
         </div>
       </section>
 
-      {/* JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: p.name,
-            description: p.summary,
-            inLanguage: 'ar',
-            isAccessibleForFree: true,
-          }).replace(/</g, '\\u003c'),
-        }}
-      />
     </>
   );
 }

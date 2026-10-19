@@ -17,12 +17,11 @@ import Link from 'next/link';
 import { PageHead, SectionTitle } from '@/components/ui';
 import { Reveal } from '@/components/reveal';
 import { ContactSection, portfolio } from '@/components/contact-links';
+import { NamedStructuredData } from '@/components/structured-data';
+import { baseUrl, pageMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'من نحن ومصادر المحتوى | أنا مسلم',
-  description:
-    'تعرّف على قصة "أنا مسلم"، رؤيتنا ورسالتنا وقيمنا، ومصادر المحتوى الشرعي الموثوق.',
-};
+const description = 'تعرّف على قصة "أنا مسلم"، رؤيتنا ورسالتنا وقيمنا، ومصادر المحتوى الشرعي الموثوق.';
+export const metadata = pageMetadata('من نحن ومصادر المحتوى', description, '/about', '/opengraph-image', ['مصادر المحتوى الإسلامي']);
 
 const portfolioUrl = 'https://hogz.vercel.app';
 
@@ -88,6 +87,7 @@ const sources = [
 export default function Page() {
   return (
     <>
+      <NamedStructuredData data={{ '@type': 'AboutPage', name: 'من نحن — أنا مسلم', description, url: `${baseUrl}/about/`, mainEntity: { '@type': 'Person', name: 'يوسف حجازي', url: portfolioUrl, jobTitle: 'مطوّر ومصمّم المنصة' }, inLanguage: 'ar' }} />
       <PageHead
         label="إيمانٌ يرافق يومك"
         title="من نحن"

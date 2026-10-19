@@ -13,6 +13,9 @@ import {
   Heart,
   ArrowUpLeft,
   Sparkles,
+  Clock,
+  Compass,
+  CircleDot,
 } from 'lucide-react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -27,6 +30,9 @@ const links: [string, string][] = [
   ['/duas/', 'الأدعية'],
   ['/hadith/', 'الأحاديث'],
   ['/stories/', 'قصص الأنبياء'],
+  ['/prayer-times/', 'مواقيت الصلاة'],
+  ['/qibla/', 'القبلة'],
+  ['/tasbih/', 'التسبيح'],
 ];
 
 // ============================================================
@@ -210,6 +216,10 @@ export function Shell({ children }: { children: React.ReactNode }) {
               قصص الأنبياء <ArrowUpLeft size={14} />
             </Link>
             <p className="footer-note">﴿ وَقُل رَّبِّ زِدْنِي عِلْمًا ﴾</p>
+            <h3>أدوات المسلم اليومية</h3>
+            <Link href="/prayer-times/"><Clock size={15} /> مواقيت الصلاة</Link>
+            <Link href="/qibla/"><Compass size={15} /> اتجاه القبلة</Link>
+            <Link href="/tasbih/"><CircleDot size={15} /> التسبيح والذكر</Link>
           </div>
         </div>
 
